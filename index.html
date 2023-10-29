@@ -40,6 +40,7 @@
 			<div id="number"></div>
 			<input type="hidden" name="hidden" id="hidden" />
 			<input type="text" name="captcha" id="captcha" />
+			 <div id="g-recaptcha" data-callback="recaptchaCallback"></div>
 		</p>
 		<p>
 			<input type="button" name="claim" id="claim" value="Claim" />
@@ -79,23 +80,43 @@
 			TB89e6UhHnseDmtL2TX8dFpAJZb2iwwgt3|1 satoshi
 		</p>
 	</div>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
 	<script>
 	var num = Math.floor(Math.random() * 11);
 	$("#number").text(num);
 	$("#hidden").val(num);
-	
+
+var onloadCallback = function() {
+    grecaptcha.render('g-recaptcha', {
+        'sitekey' : '6LcWQdsoAAAAAKgGNi8B9TCNLspOS7OpSRXBi6Hk'
+    });
+};
+var recaptchaCallback = function () {
+    let submit = document.getElementById('submit-btn')
+    submit.classList.remove('disabled');
+}
+		
 	$("#claim").click(function(){
 		var wallet = $("#wallet").val();
 		if(wallet == "") {
 			alert("Enter BTC wallet address");
 		} else {
-			var captcha = $("#captcha").val();
-			if(captcha == "") {
-				alert("Enter captcha");
-			}
+			//var captcha = $("#captcha").val();
+			//if(captcha == "") {
+				//alert("Enter captcha");
+			//}
+			if (grecaptcha && grecaptcha.getResponse().length !== 0) {
+       // this.submit();
+    } else {
+        alert('Please check captcha');
+    }
+    e.preventDefault();
 		}
 		
 	});
 </script>
+
 </body>
 </html>
