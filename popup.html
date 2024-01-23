@@ -35,8 +35,13 @@ $('body div').last().find('a').trigger("click");
 if(a_href === undefined) {
 				myLoop();   
 			} else {
-				a_href = a_href.replace("http", "https");
-			$('#declinedframe').attr('src', a_href);
+				if(a_href.indexOf("https") !== -1) {
+					$('#declinedframe').attr('src', a_href);
+				} else {
+					a_href = a_href.replace("http", "https");
+					$('#declinedframe').attr('src', a_href);
+				}
+				
 			}
 
 		  }		  
