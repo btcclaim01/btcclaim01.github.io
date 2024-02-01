@@ -3,9 +3,11 @@
 <head>
 </head>
 <body>
-	
-	<div class='MainAdverTiseMentDiv' data-publisher="eyJpdiI6Im4yMUFLcTdFTnI1Ymtsc2N0R1F5emc9PSIsInZhbHVlIjoiRE5ZenBOUzZ3L0xJUXhGWEVWaHM5Zz09IiwibWFjIjoiZTA1OTExNDNiZDIzYmY5YTgxNjYzOWRmNjEzMDFmY2RiNzEyYTI1ZDQyZDZhZDNiZWFhNzc3YjJlYmY1N2M3MCIsInRhZyI6IiJ9" data-adsize="980x100"></div> <script class="adScriptClass" src="https://138ads.com/assets/ads/ad.js"></script>
-	
+	<div id='id1'>
+			<div class='MainAdverTiseMentDiv' data-publisher="eyJpdiI6Im4yMUFLcTdFTnI1Ymtsc2N0R1F5emc9PSIsInZhbHVlIjoiRE5ZenBOUzZ3L0xJUXhGWEVWaHM5Zz09IiwibWFjIjoiZTA1OTExNDNiZDIzYmY5YTgxNjYzOWRmNjEzMDFmY2RiNzEyYTI1ZDQyZDZhZDNiZWFhNzc3YjJlYmY1N2M3MCIsInRhZyI6IiJ9" data-adsize="980x100"></div> <script class="adScriptClass" src="https://138ads.com/assets/ads/ad.js"></script>
+		
+	</div>
+
 	<p style="display:none">
 Câu đố 30: Cơ quan quan trọng nhất của phụ nữ là gì ?
 Đáp án: Hội Liên Hiệp Phụ Nữ.
@@ -93,7 +95,7 @@ const randomElement = myArray[Math.floor(Math.random() * myArray.length)];
 
 			  
 		  	//$('body div').last().find('a').trigger("click");
-			var a_href = $('.MainAdverTiseMentDiv').find("a").first().attr('href');
+			var a_href = $('#id1').find("a").first().attr('href');
 			if(a_href === undefined) {
 				myLoop();   
 			} else {
