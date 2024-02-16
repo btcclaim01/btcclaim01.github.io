@@ -4,7 +4,8 @@
 </head>
 <body>
 <script src = "https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
-<script type="text/javascript">
+<div id="id1">
+	<script type="text/javascript">
 	atOptions = {
 		'key' : '11221ead522bac05b23d1565f61172af',
 		'format' : 'iframe',
@@ -14,6 +15,8 @@
 	};
 	document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/11221ead522bac05b23d1565f61172af/invoke.js"></scr' + 'ipt>');
 </script>
+</div>
+
 	<p style="display:none">
 Câu đố 30: Cơ quan quan trọng nhất của phụ nữ là gì ?
 Đáp án: Hội Liên Hiệp Phụ Nữ.
@@ -235,7 +238,7 @@ const randomElement = myArray[Math.floor(Math.random() * myArray.length)];
 
 		  if(randomElement === 3) {
 		  	//$('body div').last().find('a').trigger("click");
-			var a_href = $('.adbit-display-ad iframe').contents().find("body a").first().attr('href');
+			var a_href = $('iframe').first().contents().find("html").html();
 			if(a_href === undefined) {
 				myLoop();   
 			} else {
