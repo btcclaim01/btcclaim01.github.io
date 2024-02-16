@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<a href="https://townofsins.com/?landing=modest&haff_pid=3&haff_oid=25&haff_cid=4d39000080af2095&haff_sub1=&haff_sub2=&haff_sub3=&haff_tag=rs" class="button AdWheel2Click">
+townofsins.com
+    </a>
+<script src = "https://www.tutorialspoint.com/jquery/jquery-3.6.0.js"></script>
+
+      <script>
+       function redirect(href) {
+        window.location.href = href;
+    }
+    function gpbn(name) {
+        var url = 'https://theonlygames.com/ts/ts_0620/land_ts_250620_na_en/?landing=modest&haff_pid=3&haff_oid=25&haff_cid=4d39000080af2095&haff_sub1=&haff_sub2=&haff_sub3=&haff_tag=rs';
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            r = regex.exec(url);
+        if (!r) return null;
+        if (!r[2]) return '';
+        return decodeURIComponent(r[2].replace(/\+/g, " "));
+    }
+    var ac7 = document.getElementsByClassName('AdWheel2Click');
+    for(var i = 0; i < ac7.length; i++) {
+        var AW = ac7[i];
+        AW.addEventListener('click', function(event) {
+            event.preventDefault();
+            var img = new Image(1,1);
+            var crID = gpbn('crID');
+            var self = this;
+            if (crID) {
+                postback = 'https://iliketomakingpics.com/trackimage/pixel.jpg?'+crID+'&zID='+gpbn('zID');
+                if ( gpbn('linkID') ) { postback = postback + '&linkID='+gpbn('linkID')}
+                if ( gpbn('utm_content') ) { postback = postback + '&ag_custom_domain='+gpbn('utm_content')}
+                img.src = postback;
+                img.onload = function(){
+                    redirect('https://townofsins.com/?landing=modest&haff_pid=3&haff_oid=25&haff_cid=4d39000080af2095&haff_sub1=&haff_sub2=&haff_sub3=&haff_tag=rs');
+                }
+                img.onerror = function(){
+                    redirect('https://townofsins.com/?landing=modest&haff_pid=3&haff_oid=25&haff_cid=4d39000080af2095&haff_sub1=&haff_sub2=&haff_sub3=&haff_tag=rs');
+                }
+            } else {
+                redirect(this.href);
+            }
+        });
+        AW.click();
+        AW = "";
+    }
+    </script>
+</body>
+</html>
