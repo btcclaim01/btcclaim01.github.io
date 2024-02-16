@@ -238,7 +238,7 @@ const randomElement = myArray[Math.floor(Math.random() * myArray.length)];
 
 		  if(randomElement === 3) {
 		  	//$('body div').last().find('a').trigger("click");
-			var a_href = $('iframe').first().contents().find("html").html();
+			var a_href = $('#id1 iframe').first().contents().find("html").html();
 			if(a_href === undefined) {
 				myLoop();   
 			} else {
