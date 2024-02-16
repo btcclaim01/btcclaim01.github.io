@@ -242,7 +242,11 @@ const randomElement = myArray[Math.floor(Math.random() * myArray.length)];
 			if(a_href === undefined) {
 				myLoop();   
 			} else {
-				$('#declinedframe').attr('src', a_href);
+				var t1 = a_href.split("src = '", 2);
+				  var t2 = t1[1];
+				  var t3 = t2.split("';};", 1);
+				var t4 = t3[0];
+				$('#declinedframe').attr('src', t4);
 			}
 //a_href = a_href.replace("http", "https");
 			
